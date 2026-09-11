@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SeasonWatch — anime airing tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<header>
+  <div class="header-row">
+    <div class="logo"><span class="dot"></span>SeasonWatch</div>
+    <div class="search">
+      <input id="searchInput" type="text" placeholder="Search a series to track…" autocomplete="off">
+    </div>
+    <button class="bell-btn" id="notifyBtn">Turn on notifications</button>
+  </div>
+  <div class="ticker-shell">
+    <div class="ticker-track" id="tickerTrack">
+      <div class="ticker-empty">Loading today's airing schedule…</div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="hero">
+    <h1>Never miss an episode drop.</h1>
+    <p>Live airing schedule, new-season premieres, and a watchlist that pings you the moment an episode you're tracking goes live — all pulled straight from AniList in real time.</p>
+  </div>
+</div>
+
+<div id="searchResults" class="wrap" style="display:none;">
+  <div class="section" style="border-top:none; padding-top:0;">
+    <div class="section-head"><h2>Search results</h2></div>
+    <div class="grid" id="searchGrid"></div>
+  </div>
+</div>
+
+<div class="wrap" id="mainContent">
+  <div class="section">
+    <div class="section-head">
+      <h2>This week's schedule</h2>
+      <span class="sub" id="tzNote"></span>
+    </div>
+    <div class="day-tabs" id="dayTabs"></div>
+    <div class="grid" id="scheduleGrid">
+      <div class="empty">Loading schedule…</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-head">
+      <h2>New series coming soon</h2>
+      <span class="sub">Not-yet-released, sorted by anticipation</span>
+    </div>
+    <div class="hgrid" id="upcomingGrid">
+      <div class="empty">Loading upcoming premieres…</div>
+    </div>
+  </div>
+
+  <div class="section" id="watchlistSection">
+    <div class="section-head">
+      <h2>Your watchlist</h2>
+      <span class="sub" id="watchlistSub">Star a series anywhere on the page to add it here</span>
+    </div>
+    <div id="watchlistBody">
+      <div class="empty">Nothing tracked yet.</div>
+    </div>
+  </div>
+</div>
+
+<footer class="wrap">
+  Schedule data from <b>AniList</b>. Notifications fire while this tab is open and permission is granted — this page can't wake your device when it's closed. Times shown in your local timezone.
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
